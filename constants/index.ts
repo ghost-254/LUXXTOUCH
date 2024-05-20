@@ -88,7 +88,7 @@ export const testimonials = [
   export const SOCIALS = {
     title: 'Social',
     links: [
-      '/twitter.PNG',
+      '/twitter.png',
       '/facebook.PNG',
       '/youtube.PNG',
       '/telegram.PNG',
