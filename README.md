@@ -1,5 +1,3 @@
-Absolutely, here's a README for your project:
-
 ---
 
 # Lux Vita Spa - Online Massage Booking Service
