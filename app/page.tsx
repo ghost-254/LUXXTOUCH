@@ -6,8 +6,8 @@ import GetApp from "@/components/GetApp";
 import Guide from "@/components/Guide";
 import Hero from "@/components/Hero";
 import People from "@/components/People";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import { testimonials } from "@/constants";
+import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
       <People />
       <Guide />
       <Services />
-      <TestimonialsSection testimonials={testimonials}/>
+      <Testimonials testimonials={testimonials}/>
       <GetApp />
     </>
   )

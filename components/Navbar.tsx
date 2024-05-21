@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Button from './Button';
 import MobileMenu from './MobileMenu';
 import { NAV_LINKS } from '@/constants';
 
@@ -21,7 +20,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="flexBetween max-container padding-container relative z-30 py-5">
+      <nav className="flexBetween max-container padding-container relative z-30 py-10">
         <Link href="/">
           <Image src="/logom.png" alt="logo" width={50} height={100} />
         </Link>  
@@ -42,15 +41,6 @@ const Navbar = () => {
         </Link>
       ))}
     </ul>
-
-        <div className="lg:flexCenter hidden">
-          <Button 
-            type="button"
-            title="Download App Here!"
-            icon="/donwloads.svg"
-            variant="btn_dark_green"
-          />
-        </div>
 
         <div className="lg:hidden">
           <button onClick={toggleMenu}>

@@ -49,18 +49,28 @@ const People = () => {
           backgroundImage="bg-bg-img-1"
           title="Deep to Your Soul"
           subtitle="Relax, Enjoy the Vibe"
-          peopleJoined="10k+ Users"
+          peopleJoined="13k+ Users"
         />
       </div>
 
       <div className="flexEnd mt-10 px-6 lg:-mt-60 lg:mr-6">
         <div className="bg-blue-400 p-8 lg:max-w-[500px] xl:max-w-[734px] xl:rounded-5xl xl:px-16 xl:py-20 relative w-full overflow-hidden rounded-3xl">
           <h2 className="regular-24 md:regular-32 2xl:regular-64 capitalize text-white">
-            <strong>Feeling Lonely?</strong> Not Any More! Embrace Connection, Discover Pleasure
+            <strong>Key Benefits?</strong>
           </h2>
-          <p className="regular-14 xl:regular-16 mt-5 text-white">
-          Discover the antidote to loneliness with Luxx. We're not just a service; we're your intimate companion on a journey to fulfillment. Explore the depths of your desires, guided by our expert hands and passionate hearts. With Luxx, every moment is an opportunity for connection and ecstasy. Say goodbye to solitude, and hello to a world of sensual exploration.
-          </p>
+          <li className="regular-14 xl:regular-16 mt-5 text-white">
+            Secure Payments
+          </li>
+          <li className="regular-14 xl:regular-16 mt-5 text-white">
+            Absolute Discretion
+          </li>
+          <li className="regular-14 xl:regular-16 mt-5 text-white">
+            Flexible Scheduling
+          </li>
+          <li className="regular-14 xl:regular-16 mt-5 text-white">
+            Professional Masseuses/Masseurs
+          </li>
+          <p className="regular-5 md:regular-10 2xl:regular-10 text-white mt-3">"What Happens in Lux Vegas Stays in Lux Vegas"</p>
           <Image 
             src="/quote.svg"
             alt="quote"

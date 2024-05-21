@@ -52,11 +52,11 @@ export const NAV_LINKS = [
 export const testimonials = [
   { author: "Otieno", text: "I've never experienced such blissful relaxation before! Luxx Touch is truly magical." },
   { author: "Jane", text: "Luxx Touch massage services are a game changer. I feel rejuvenated and ready to conquer the world!" },
-  { author: "Brian", text: "I've never experienced such blissful relaxation before! Luxx Touch is truly magical." },
-  { author: "Kamau", text: "Luxx Touch massage services are a game changer. I feel rejuvenated and ready to conquer the world!" },
-  { author: "John B.", text: "I've never experienced such blissful relaxation before! Luxx Touch is truly magical." },
-  { author: "Kevin", text: "Luxx Touch massage services are a game changer. I feel rejuvenated and ready to conquer the world!" },
-  { author: "Elisa", text: "I've never experienced such blissful relaxation before! Luxx Touch is truly magical." },
+  { author: "Brian", text: "All I can say that it has been a long time coming. We have lacked a genuine site like Lux, where you basically swipe (just like in Tinder) and get to pick your favorite masseuse. One more thing: they're beautiful too." },
+  { author: "Kamau", text: "Mimi niko tuu na neno moja: what happens in Lux Vegas stays in Lux Vegas" },
+  { author: "Jay B.", text: "Hii site walai wamefikiria. Saa ukitaka manzi akumassage unadownload tuu hii app yao alafu unapata mamanzi kibao hapo ndani. I swear, I am happy TBH. Thanks Lux." },
+  { author: "Kevin", text: "These guys are cool asf. My go to place when I need some relaxing with a kababy. I just swipe and DM my favorite. That's it. Rates zao pia ni cool and affordable." },
+  { author: "Elisa", text: "I like Lux so much because it's my side hustle. I get to earn some cool sum every month. They have also ensured that we are safe because they collect client's details. So, you are sure the client will do no harm to you ukienda hiyo sessions zako." },
 ];
 
   // FOOTER SECTION
@@ -88,9 +88,8 @@ export const testimonials = [
   export const SOCIALS = {
     title: 'Social',
     links: [
-      '/twitter.PNG',
+      '/twitter.png',
       '/facebook.PNG',
-      '/youtube.PNG',
       '/telegram.PNG',
       '/tiktok.PNG',
       '/whatsapp.PNG',

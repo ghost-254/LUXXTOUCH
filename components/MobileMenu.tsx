@@ -1,5 +1,6 @@
-// MobileMenu.tsx
+// MobileMenu.tsx file
 
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -9,13 +10,62 @@ interface MobileMenuProps {
 }
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
+  const menuRef = useRef<HTMLDivElement>(null);
+  const touchStartXRef = useRef<number | null>(null);
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        onClose();
+      }
+    }
+    
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen, onClose]);
+
+  // Handle touch events for swiping
+  useEffect(() => {
+    function handleTouchStart(event: TouchEvent) {
+      touchStartXRef.current = event.touches[0].clientX;
+    }
+
+    function handleTouchMove(event: TouchEvent) {
+      if (touchStartXRef.current !== null) {
+        const touchEndX = event.touches[0].clientX;
+        const touchDiff = touchStartXRef.current - touchEndX;
+
+        // If swipe is more than 50px to the left, close the menu
+        if (touchDiff > 50) {
+          onClose();
+        }
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener('touchstart', handleTouchStart);
+      document.addEventListener('touchmove', handleTouchMove);
+    }
+
+    return () => {
+      document.removeEventListener('touchstart', handleTouchStart);
+      document.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, [isOpen, onClose]);
+
   return (
     <div
       className={`fixed inset-0 z-50 flex items-center justify-end bg-black bg-opacity-50 transition-opacity ${
         isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
       }`}
     >
-      <div className="bg-white h-full w-64 p-8 shadow-lg">
+      <div ref={menuRef} className="bg-white h-full w-64 p-8 shadow-lg">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl font-semibold">Menu</h2>
           <button onClick={onClose}>
