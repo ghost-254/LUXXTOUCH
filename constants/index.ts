@@ -71,16 +71,11 @@ export const testimonials = [
         'Terms and Conditions for Clients',
       ],
     },
-    {
-      title: 'Our Network',
-      links: ['Expert Masseuses & Masseurs', 'Dedicated Customer Care', 'Standby Technical Teams'],
-    },
   ];
   
   export const FOOTER_CONTACT_INFO = {
     title: 'Our Contact Info',
     links: [
-      { label: 'Call Support', value: '254-70752-9691' },
       { label: 'For Enquiries', value: 'info@luxxtouch.com' },
     ],
   };

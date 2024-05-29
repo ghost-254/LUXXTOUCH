@@ -4,8 +4,8 @@ import React from 'react';
 
 const About = () => {
   return (
-    <section id="about" className="max-w-7xl mx-auto px-10 py-30">
-      <div className="mb-12">
+    <section id="about" className="bg-gray-100 max-container padding-container flex flex-col gap-10 py-10 md:gap-28 lg:py-20 xl:flex-col">
+      <div className="mb-8">
         <h2 className="text-center text-4xl font-bold">About Lux</h2>
         <div className="flex flex-col md:flex-row items-center gap-8 mt-4">
           <p className="text-gray-600 text-base">
@@ -15,7 +15,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="mb-12">
+      <div className="mb-8">
         <h3 className="text-3xl font-bold">Our Mission</h3>
         <div className="flex flex-col-reverse md:flex-row items-center gap-8 mt-4">
           <img src="/massage1.jpeg" alt="Image 2" className="rounded-lg w-200 h-60"/>

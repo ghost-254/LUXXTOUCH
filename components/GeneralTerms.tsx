@@ -140,7 +140,7 @@ const GeneralTerms = () => {
           <div>
             <h3 className="bold-32 mb-4">16. Contact Us</h3>
             <p className="regular-16 text-gray-30">
-              If you have any questions or concerns about these Terms, please contact us at <a href='mailto:info@luxxtouch.com' className="hoover-color-blue-400" >info@luxxtouch.com</a> or call us at +254-707529691.
+              If you have any questions or concerns about these Terms, please contact us at <a href='mailto:info@luxxtouch.com' className="text-blue-500 hover:underline-offset-1 hover:underline" >info@luxxtouch.com</a>.
             </p>
           </div>
 
