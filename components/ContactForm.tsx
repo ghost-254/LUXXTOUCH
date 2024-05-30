@@ -44,7 +44,7 @@ const ContactForm = () => {
 
   return (
     <section className="bg-gray-100 py-20">
-      <h1 className="text-3xl font-bold text-center mb-8">Contact Us</h1>
+      <h2 className="text-3xl font-bold text-center mb-8">Contact Us</h2>
     <form onSubmit={handleSubmit} className="max-w-md mx-auto p-8 bg-black rounded shadow-md">
       {showSuccess && (
         <div className="bg-green-100 text-green-800 p-4 mb-4 rounded">

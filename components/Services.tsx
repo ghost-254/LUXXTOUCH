@@ -20,7 +20,7 @@ const Services = () => {
 
         <div className="z-20 flex w-full flex-col lg:w-[60%]">
           <div className='relative'>
-            <h2 className="bold-30 lg:bold-40">Our Services</h2>
+            <h1 className="text-center text-4xl font-bold lg:text-4xl lg:text-bold lg:text-left">Our Services</h1>
           </div>
           <ul className="mt-10 grid gap-10 md:grid-cols-2 lg:mg-20 lg:gap-20">
             {SERVICES.map((service) => (
