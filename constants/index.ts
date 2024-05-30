@@ -81,13 +81,24 @@ export const testimonials = [
   };
   
   export const SOCIALS = {
-    title: 'Social',
+    title: 'Socials',
     links: [
-      '/twitter.png',
-      '/facebook.PNG',
-      '/telegram.PNG',
-      '/tiktok.PNG',
-      '/whatsapp.PNG',
-      '/instagram.PNG',
+      {
+        icon: '/facebook.PNG',
+        url: 'https://www.facebook.com/luxxvitaspa/'
+      },
+      {
+        icon: '/telegram.PNG',
+        url: 'https://t.me/luxx_massage'
+      },
+      {
+        icon: '/tiktok.PNG',
+        url: 'https://www.tiktok.com/@luxx_touch'
+      },
+      {
+        icon: '/instagram.PNG',
+        url: 'https://www.instagram.com/luxxmassage2024/'
+      },
     ],
   };
+  

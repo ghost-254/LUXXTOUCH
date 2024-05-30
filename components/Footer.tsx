@@ -59,8 +59,8 @@ const Footer = () => {
               <FooterColumn title={SOCIALS.title}>
                 <ul className="regular-14 flex gap-4 text-gray-30">
                   {SOCIALS.links.map((link) => (
-                    <Link href="/" key={link}>
-                      <Image src={link} alt="logo" width={24} height={24} />
+                    <Link href= {link.url} key={link.icon}>
+                      <Image src={link.icon} alt="logo" width={24} height={24} />
                     </Link>
                   ))}
                 </ul>
@@ -70,7 +70,7 @@ const Footer = () => {
         </div>
 
         <div className="border bg-gray-20" />
-        <p className="regular-14 w-full text-center text-gray-30">2024 Luxx Touch | All rights reserved</p>
+        <p className="regular-14 w-full text-center text-gray-30"> © 2024 Luxx Touch | All rights reserved</p>
       </div>
     </footer>
   )

@@ -6,7 +6,7 @@ import React from 'react'
 
 const Services = () => {
   return (
-    <section id='#services' className="flex-col flexCenter overflow-hidden bg-feature-bg bg-center bg-no-repeat py-24">
+    <section id='#services' className="bg-gray-100 flex flex-col flexCenter overflow-hidden bg-feature-bg bg-center bg-no-repeat py-24">
       <div className="max-container padding-container relative w-full flex justify-end">
         <div className="flex flex-1 lg:min-h-[900px]">
           <Image
@@ -20,7 +20,7 @@ const Services = () => {
 
         <div className="z-20 flex w-full flex-col lg:w-[60%]">
           <div className='relative'>
-            <h2 className="bold-40 lg:bold-64">Our Services</h2>
+            <h2 className="bold-30 lg:bold-40">Our Services</h2>
           </div>
           <ul className="mt-10 grid gap-10 md:grid-cols-2 lg:mg-20 lg:gap-20">
             {SERVICES.map((service) => (
