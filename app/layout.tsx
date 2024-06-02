@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ClientModalSetup from "@/components/ClientModalSetup";
 
 
 export const metadata: Metadata = {
@@ -21,7 +22,8 @@ export default function RootLayout({
       <body>
         <Navbar/>
         <main className="relative overflow-hidden">
-        {children}
+        <ClientModalSetup /> {/* Include the client component */}
+        <div id="__next">{children}</div>
         </main>
         <Footer/>
       </body>
