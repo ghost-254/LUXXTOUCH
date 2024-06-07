@@ -8,8 +8,8 @@ import Modal from 'react-modal';
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
+    user_name: '',
+    user_email: '',
     phone: '',
     message: '',
   });
@@ -32,7 +32,7 @@ const ContactForm: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!validateEmail(formData.email)) {
+    if (!validateEmail(formData.user_email)) {
       alert('Please enter a valid email address.');
       return;
     }
@@ -42,7 +42,7 @@ const ContactForm: React.FC = () => {
       return;
     }
 
-    emailjs.send('service_9zp6dic', 'template_edjdi69', formData, 'your_user_id')
+    emailjs.send('service_b1xy9fn', 'template_edjdi69', formData, 'aQNOZLkBab4f8VLpx')
       .then((result) => {
         setModalIsOpen(true);
         setTimeout(() => setModalIsOpen(false), 5000);
@@ -59,8 +59,8 @@ const ContactForm: React.FC = () => {
           <label className="block text-gray-700 mb-2">Full Name</label>
           <input
             type="text"
-            name="name"
-            value={formData.name}
+            name="user_name"
+            value={formData.user_name}
             onChange={handleInputChange}
             className="w-full p-2 border border-gray-300 rounded"
             required
@@ -70,8 +70,8 @@ const ContactForm: React.FC = () => {
           <label className="block text-gray-700 mb-2">Email</label>
           <input
             type="email"
-            name="email"
-            value={formData.email}
+            name="user_email"
+            value={formData.user_email}
             onChange={handleInputChange}
             className="w-full p-2 border border-gray-300 rounded"
             required
@@ -85,6 +85,8 @@ const ContactForm: React.FC = () => {
             onChange={handlePhoneChange}
             inputClass="w-full p-2 border border-gray-300 rounded"
           />
+          {/* Hidden input to include phone in form data */}
+          <input type="hidden" name="phone" value={formData.phone} />
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 mb-2">Message</label>
