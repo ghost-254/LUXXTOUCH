@@ -5,6 +5,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ClientModalSetup from "@/components/ClientModalSetup";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 
 export const metadata: Metadata = {
@@ -26,6 +28,8 @@ export default function RootLayout({
         <div id="__next">{children}</div>
         </main>
         <Footer/>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
