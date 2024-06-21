@@ -13,14 +13,16 @@ const Hero = () => {
     { type: "image", src: "/phone_evaline.png" },
     { type: "image", src: "/phone_connect.png" },
     { type: "image", src: "/phone_message.png" },
-    { type: "video", src: "/chat_video.mp4" }
+    { type: "video", src: "/chat_video.mp4" },
+    { type: "image", src: "/phone_payments.png" }
+
 
   ]
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 5000)
+    }, 15000)
 
     return () => clearInterval(interval)
   }, [slides.length])
