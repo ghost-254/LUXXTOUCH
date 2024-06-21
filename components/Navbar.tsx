@@ -22,7 +22,7 @@ const Navbar = () => {
     <>
       <nav className="flexBetween max-container padding-container relative z-30 py-10">
         <Link href="/">
-          <Image src="/logom.png" alt="logo" width={50} height={100} />
+          <Image src="/logo.png" alt="logo" width={50} height={100} />
         </Link>  
 
         <ul className="hidden h-full gap-12 lg:flex">

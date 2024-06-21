@@ -11,14 +11,14 @@ const Footer = () => {
       <div className="padding-container max-container flex w-full flex-col gap-14">
         <div className="flex flex-col items-start justify-center gap-[10%] md:flex-row">
           <Link href="/" className="mb-10">
-            <Image src="/logom.png" alt="logo" width={74} height={29}/>
+            <Image src="/logo.png" alt="logo" width={74} height={29}/>
           </Link>
 
           <div className='flex flex-wrap gap-10 sm:justify-between md:flex-1'>
-            {FOOTER_LINKS.map((columns) => (
-              <FooterColumn title={columns.title}>
+            {FOOTER_LINKS.map((columns, index) => (
+              <FooterColumn title={columns.title} key={`footer-column-${index}`}>
                 <ul className="regular-14 flex flex-col gap-4 text-gray-30">
-                  {columns.links.map((link) => (
+                  {columns.links.map((link, linkIndex) => (
                     <Link 
                       href={
                         link === 'About Lux' ? '/about' : 
@@ -28,7 +28,7 @@ const Footer = () => {
                         link === 'Terms and Conditions for Clients' ? '/clients-terms' :
                         link
                         } 
-                      key={link}>
+                      key={`footer-link-${linkIndex}`}>
                       {link}
                     </Link>
                   ))}
@@ -37,11 +37,10 @@ const Footer = () => {
             ))}
 
             <div className="flex flex-col gap-5">
-              <FooterColumn title={FOOTER_CONTACT_INFO.title}>
-                {FOOTER_CONTACT_INFO.links.map((link) => (
+              <FooterColumn title={FOOTER_CONTACT_INFO.title} key="footer-contact-info">
+                {FOOTER_CONTACT_INFO.links.map((link, contactIndex) => (
                   <div
-                  
-                    key={link.label}
+                    key={`contact-link-${contactIndex}`}
                     className="flex gap-4 md:flex-col lg:flex-row"
                   >
                     <p className="whitespace-nowrap">
@@ -56,10 +55,10 @@ const Footer = () => {
             </div>
 
             <div className="flex flex-col gap-5">
-              <FooterColumn title={SOCIALS.title}>
+              <FooterColumn title={SOCIALS.title} key="footer-socials">
                 <ul className="regular-14 flex gap-4 text-gray-30">
-                  {SOCIALS.links.map((link) => (
-                    <Link href= {link.url} key={link.icon}>
+                  {SOCIALS.links.map((link, socialIndex) => (
+                    <Link href={link.url} key={`social-link-${socialIndex}`}>
                       <Image src={link.icon} alt="logo" width={24} height={24} />
                     </Link>
                   ))}

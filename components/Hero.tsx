@@ -1,43 +1,60 @@
 'use client'
 
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Button from './Button'
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const intervalRef = useRef<NodeJS.Timeout | null>(null)
+
   const slides = [
     { type: "image", src: "/phone_launch.png" },
     { type: "image", src: "/phone_usertype.png" },
     { type: "image", src: "/phone_create.png" },
+    { type: "image", src: "/login_phone.png" },
     { type: "image", src: "/phone_evaline.png" },
     { type: "image", src: "/phone_connect.png" },
     { type: "image", src: "/phone_message.png" },
     { type: "video", src: "/chat_video.mp4" },
-    { type: "image", src: "/phone_payments.png" }
-
-
+    { type: "image", src: "/select_date.png" },
+    { type: "image", src: "/phone_payments.png" },
+    { type: "image", src: "/mpesa_phone.png" },
+    { type: "image", src: "/booking_success.png" },
+    { type: "image", src: "/booking_details.png" }
   ]
 
-  useEffect(() => {
-    const interval = setInterval(() => {
+  const startSlider = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current)
+    }
+
+    intervalRef.current = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
     }, 15000)
+  }
 
-    return () => clearInterval(interval)
+  useEffect(() => {
+    startSlider()
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current)
+      }
+    }
   }, [slides.length])
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length)
+    startSlider()
   }
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
+    startSlider()
   }
 
   return (
     <section className="bg-white max-container padding-container flex flex-col gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row">
-      <div className="hero-map bg-pattern-2" />
 
       <div className="relative z-20 flex flex-1 flex-col xl:w-1/2">
         <h1 className="bold-40 lg:bold-60">Luxurious In-Home Massage Services</h1>
@@ -75,9 +92,9 @@ const Hero = () => {
       </div>
 
       <div className="relative w-full xl:w-1/2 flex items-center justify-center">
-        <button onClick={prevSlide} className="absolute left-4 z-30">‹</button>
+        <button onClick={prevSlide} className="absolute left-4 z-30 p-4 text-3xl font-bold bg-gray-200 rounded-full shadow-lg transform -translate-y-1/2">‹</button>
         <div className="overflow-hidden w-full">
-          <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+          <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
             {slides.map((slide, index) => (
               <div className="min-w-full flex justify-center" key={index}>
               {slide.type === "image" ? (
@@ -101,7 +118,7 @@ const Hero = () => {
             ))}
           </div>
         </div>
-        <button onClick={nextSlide} className="absolute right-4 z-30">›</button>
+        <button onClick={nextSlide} className="absolute right-4 z-30 p-4 text-3xl font-bold bg-gray-200 rounded-full shadow-lg transform -translate-y-1/2">›</button>
       </div>
     </section>
   )
