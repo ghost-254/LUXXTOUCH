@@ -27,17 +27,27 @@ const Guide = () => {
         />
       </div>
       
-      <div className="flexCenter max-container robject-cover object-center 2xl:rounded-5xl">
-        <h1 className='ml-10 bold-40 lg:bold-40 xl:max-w-[390px]' >Swipe through profiles and Chat to book!</h1>
-        <Image 
-          src="/book_chat.png"
-          alt="booking and chatting"
-          layout='responsive'
-          width={400}
-          height={600}
-          className="w-full max-container object-cover object-center 2xl:rounded-5xl"
-        />
+      <div className="flex flex-col lg:flex-row items-center justify-center max-container">
+      <div className="text-center lg:text-left lg:mr-10">
+      <h1 className='font-bold text-2xl lg:text-4xl xl:max-w-[390px]'>Swipe through profiles and Chat to book!</h1>
+      <p className='mt-2 text-base lg:text-lg xl:max-w-[390px]'>
+        Easily connect with professionals and book appointments seamlessly through our intuitive chat feature. Explore profiles and find the right match for your needs.
+      </p>
       </div>
+      <div className='w-full max-w-md lg:max-w-lg'>
+      <Image 
+        src="/book_chat.png"
+        alt="booking and chatting"
+        layout='responsive'
+        width={400}
+        height={500}
+        className="w-full object-cover object-center 2xl:rounded-5xl"
+      />
+      </div>
+</div>
+
+
+
     </section>
   ) 
 }

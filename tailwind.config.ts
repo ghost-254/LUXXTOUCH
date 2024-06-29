@@ -14,6 +14,7 @@ module.exports = {
           50: '#30AF5B',
           90: '#292C27',
         },
+        customTeal: '#134E4A',
         gray: {
           10: '#EEEEEE',
           20: '#A2A2A2',

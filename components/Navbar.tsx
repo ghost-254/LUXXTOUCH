@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="flexBetween max-container padding-container relative z-30 py-10">
+      <nav className="bg-customTeal font-mono flexBetween max-container padding-container relative z-30 py-10">
         <Link href="/">
           <Image src="/logo.png" alt="logo" width={50} height={100} />
         </Link>  

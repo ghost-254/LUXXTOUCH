@@ -7,7 +7,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="flexCenter mb-24 py-10">
+    <footer className="bg-indigo-950 font-mono flexCenter py-20 text-white">
       <div className="padding-container max-container flex w-full flex-col gap-14">
         <div className="flex flex-col items-start justify-center gap-[10%] md:flex-row">
           <Link href="/" className="mb-10">
@@ -17,7 +17,7 @@ const Footer = () => {
           <div className='flex flex-wrap gap-10 sm:justify-between md:flex-1'>
             {FOOTER_LINKS.map((columns, index) => (
               <FooterColumn title={columns.title} key={`footer-column-${index}`}>
-                <ul className="regular-14 flex flex-col gap-4 text-gray-30">
+                <ul className="regular-14 flex flex-col gap-4 text-indigo-50">
                   {columns.links.map((link, linkIndex) => (
                     <Link 
                       href={
@@ -46,7 +46,7 @@ const Footer = () => {
                     <p className="whitespace-nowrap">
                       {link.label}:
                     </p>
-                    <a href='mailto:info@luxxtouch.com' className="medium-14 whitespace-nowrap text-blue-70 hover:text-blue-800">
+                    <a href='mailto:info@luxxtouch.com' className="medium-14 whitespace-nowrap text-white hover:text-blue-800">
                       {link.value}
                     </a>
                   </div>
@@ -69,7 +69,7 @@ const Footer = () => {
         </div>
 
         <div className="border bg-gray-20" />
-        <p className="regular-14-full text-center text-gray-20"> © 2024 Luxx Touch | All rights reserved</p>
+        <p className="regular-14-full text-center text-gray-20"> © 2024 Lux Massage Services | Terms & Conditions Apply</p>
       </div>
     </footer>
   )
