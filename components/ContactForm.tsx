@@ -1,3 +1,4 @@
+// ContactForm.tsx
 'use client';
 
 import React, { useState } from 'react';
@@ -5,6 +6,7 @@ import emailjs from 'emailjs-com';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import Modal from 'react-modal';
+import Loader from './Loader'; // Import the Loader component
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +16,7 @@ const ContactForm: React.FC = () => {
     message: '',
   });
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [isSending, setIsSending] = useState(false); // State to track sending status
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -42,11 +45,14 @@ const ContactForm: React.FC = () => {
       return;
     }
 
+    setIsSending(true); // Show loader
     emailjs.send('service_b1xy9fn', 'template_edjdi69', formData, 'aQNOZLkBab4f8VLpx')
       .then((result) => {
+        setIsSending(false); // Hide loader
         setModalIsOpen(true);
         setTimeout(() => setModalIsOpen(false), 5000);
       }, (error) => {
+        setIsSending(false); // Hide loader
         console.log(error.text);
       });
   };
@@ -126,6 +132,15 @@ const ContactForm: React.FC = () => {
           </svg>
           <h2 className="text-2xl font-bold mb-2">Message Sent!</h2>
           <p>Your message has been successfully sent.</p>
+        </div>
+      </Modal>
+      <Modal
+        isOpen={isSending}
+        onRequestClose={() => setIsSending(false)}
+        className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50"
+      >
+        <div className="bg-white p-8 rounded shadow-md text-center">
+          <Loader /> {/* Show the loader */}
         </div>
       </Modal>
     </div>

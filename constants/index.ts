@@ -1,4 +1,6 @@
 // index.ts file
+import { IconType } from 'react-icons';
+import { FaFacebookF, FaTelegramPlane, FaTiktok, FaInstagram } from 'react-icons/fa';
 
 // NAVIGATION
 export const NAV_LINKS = [
@@ -80,23 +82,23 @@ export const testimonials = [
     ],
   };
   
-  export const SOCIALS = {
+  export const SOCIALS: { title: string; links: { icon: IconType; url: string; }[] } = {
     title: 'Socials',
     links: [
       {
-        icon: '/facebook.PNG',
+        icon: FaFacebookF,
         url: 'https://www.facebook.com/luxxvitaspa/'
       },
       {
-        icon: '/telegram.PNG',
+        icon: FaTelegramPlane,
         url: 'https://t.me/luxx_massage'
       },
       {
-        icon: '/tiktok.PNG',
+        icon: FaTiktok,
         url: 'https://www.tiktok.com/@luxx_touch'
       },
       {
-        icon: '/instagram.PNG',
+        icon: FaInstagram,
         url: 'https://www.instagram.com/luxxmassage2024/'
       },
     ],

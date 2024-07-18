@@ -1,17 +1,20 @@
 // Footer.tsx
+'use server'
 
-import { FOOTER_CONTACT_INFO, FOOTER_LINKS, SOCIALS } from '@/constants'
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
+import { FOOTER_CONTACT_INFO, FOOTER_LINKS, SOCIALS } from '@/constants';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
+import { IconType } from 'react-icons';
+import { FaFacebookF, FaTelegramPlane, FaTiktok, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-indigo-950 font-mono flexCenter py-20 text-white">
+    <footer className="bg-gray-700 font-mono flexCenter py-20 text-white">
       <div className="padding-container max-container flex w-full flex-col gap-14">
         <div className="flex flex-col items-start justify-center gap-[10%] md:flex-row">
           <Link href="/" className="mb-10">
-            <Image src="/logo.png" alt="logo" width={74} height={29}/>
+            <Image src="/logo.png" alt="logo" width={74} height={29} />
           </Link>
 
           <div className='flex flex-wrap gap-10 sm:justify-between md:flex-1'>
@@ -19,15 +22,15 @@ const Footer = () => {
               <FooterColumn title={columns.title} key={`footer-column-${index}`}>
                 <ul className="regular-14 flex flex-col gap-4 text-indigo-50">
                   {columns.links.map((link, linkIndex) => (
-                    <Link 
+                    <Link
                       href={
-                        link === 'About Lux' ? '/about' : 
+                        link === 'About Lux' ? '/about' :
                         link === 'General Terms of Use' ? '/general-terms' :
-                        link === 'Privacy Policy' ? '/privacy-policy':
+                        link === 'Privacy Policy' ? '/privacy-policy' :
                         link === 'Terms and Conditions for Masseuses/Masseurs' ? '/masseuses-terms' :
                         link === 'Terms and Conditions for Clients' ? '/clients-terms' :
                         link
-                        } 
+                      }
                       key={`footer-link-${linkIndex}`}>
                       {link}
                     </Link>
@@ -56,12 +59,15 @@ const Footer = () => {
 
             <div className="flex flex-col gap-5">
               <FooterColumn title={SOCIALS.title} key="footer-socials">
-                <ul className="regular-14 flex gap-4 text-gray-30">
-                  {SOCIALS.links.map((link, socialIndex) => (
-                    <Link href={link.url} key={`social-link-${socialIndex}`}>
-                      <Image src={link.icon} alt="logo" width={24} height={24} />
-                    </Link>
-                  ))}
+                <ul className="regular-14 flex gap-4 text-white">
+                  {SOCIALS.links.map((link, socialIndex) => {
+                    const IconComponent = link.icon;
+                    return (
+                      <Link href={link.url} key={`social-link-${socialIndex}`} target="_blank" rel="noopener noreferrer">
+                        <IconComponent size={24} className="text-white hover:text-green-500 transition-colors duration-300"/>
+                      </Link>
+                    );
+                  })}
                 </ul>
               </FooterColumn>
             </div>
@@ -89,4 +95,4 @@ const FooterColumn = ({ title, children }: FooterColumnProps) => {
   )
 }
 
-export default Footer
+export default Footer;
