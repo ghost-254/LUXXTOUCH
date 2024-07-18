@@ -11,7 +11,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Lux",
-  description: "Online Massage Booking Service. Luxx Touch is an online massage booking service in Kenya.",
+  description: "Best Online Massage Booking Service in Kenya and East Africa. Lux is an online massage booking service in Kenya.",
 };
 
 export default function RootLayout({

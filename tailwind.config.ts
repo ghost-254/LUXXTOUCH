@@ -48,6 +48,18 @@ module.exports = {
       borderRadius: {
         '5xl': '40px',
       },
+      boxShadow: {
+        'glowy': '0 0 20px rgba(0, 255, 0, 0.5)',
+      },
+      keyframes: {
+        glow: {
+          '0%, 100%': { boxShadow: '0 0 10px rgba(0, 255, 0, 0.5)' },
+          '50%': { boxShadow: '0 0 20px rgba(0, 255, 0, 0.7)' },
+        },
+      },
+      animation: {
+        glow: 'glow 1s infinite alternate',
+      },
     },
   },
   plugins: [],

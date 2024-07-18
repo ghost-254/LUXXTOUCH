@@ -57,7 +57,7 @@ const Hero = () => {
     <section className="bg-customTeal max-container padding-container flex flex-col gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row">
 
       <div className="relative z-20 flex flex-1 flex-col xl:w-1/2">
-        <h1 className="bold-40 lg:bold-60">Luxurious In-Home Massage Services</h1>
+        <h1 className="text-blue-50 bold-40 lg:bold-60">Luxurious In-Home Massage Services</h1>
         <p className="regular-16 mt-6 text-gray-400 xl:max-w-[520px]">
           Book professional massage services at your convenience. We are currently available on Android devices only. Download the App now to discover more!
         </p>
@@ -76,17 +76,19 @@ const Hero = () => {
           </div>
 
           <p className="text-blue-500 bold-16 lg:bold-20">
-            100k
+            10k
             <span className="regular-16 lg:regular-20 ml-1">Excellent Reviews</span>
           </p>
         </div>
 
         <div className="regular-16 text-black-50 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold">
           <Button 
-            type="button" 
-            title="Download App"
-            icon="/donwloads.svg"
-            variant="btn_dark_green" 
+            type="button"
+            title="Google Play Store"
+            icon="/android.svg"
+            variant="btn_dark_green"
+            full
+            href="https://play.google.com/store/apps"
           />
         </div>
       </div>
