@@ -29,6 +29,7 @@ const Footer = () => {
                         link === 'Privacy Policy' ? '/privacy-policy' :
                         link === 'Terms and Conditions for Masseuses/Masseurs' ? '/masseuses-terms' :
                         link === 'Terms and Conditions for Clients' ? '/clients-terms' :
+                        link === 'Close Account' ? '/close-account' :
                         link
                       }
                       key={`footer-link-${linkIndex}`}>

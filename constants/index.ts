@@ -71,6 +71,7 @@ export const testimonials = [
         'Privacy Policy',
         'Terms and Conditions for Masseuses/Masseurs',
         'Terms and Conditions for Clients',
+        'Close Account',
       ],
     },
   ];
