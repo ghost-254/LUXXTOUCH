@@ -40,7 +40,7 @@ const CloseAccount: React.FC = () => {
     }
 
     setIsSending(true); // Show loader
-    emailjs.send('service_b1xy9fn', 'template_close_account', formData, 'aQNOZLkBab4f8VLpx')
+    emailjs.send('service_4i440nh', 'template_2et5n9d', formData, 'dV0UF-5ZO8EUeVOAQ')
       .then((result) => {
         setIsSending(false); // Hide loader
         setModalIsOpen(true);
