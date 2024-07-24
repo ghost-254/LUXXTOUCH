@@ -1,13 +1,13 @@
 // layout.tsx
 
 import type { Metadata } from "next";
+import Head from "next/head"; // Import Head from next/head
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ClientModalSetup from "@/components/ClientModalSetup";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-
 
 export const metadata: Metadata = {
   title: "Lux",
@@ -21,13 +21,27 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <Head>
+        {/* Google Analytics Tag */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-X75DNHX808"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-X75DNHX808');
+            `,
+          }}
+        />
+      </Head>
       <body>
-        <Navbar/>
+        <Navbar />
         <main className="relative overflow-hidden">
-        <ClientModalSetup /> {/* Include the client component */}
-        <div id="__next">{children}</div>
+          <ClientModalSetup /> {/* Include the client component */}
+          <div id="__next">{children}</div>
         </main>
-        <Footer/>
+        <Footer />
         <Analytics />
         <SpeedInsights />
       </body>
