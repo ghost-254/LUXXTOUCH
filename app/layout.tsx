@@ -10,7 +10,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
-  title: "Lux",
+  title: "Lux Touch",
   description: "Best Online Massage Booking Service in Kenya and East Africa. Lux is an online massage booking service in Kenya.",
 };
 

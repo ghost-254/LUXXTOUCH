@@ -20,10 +20,10 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-customTeal font-mono flex justify-between items-center max-container padding-container relative z-30 py-10">
+      <nav className="bg-white font-mono flex justify-between items-center max-container padding-container relative z-30 py-10">
         <Link href="/" className="flex items-center">
           <Image src="/logo.png" alt="logo" width={50} height={50} />
-          <span className="ml-4 text-white font-mono first-letter:text-xl font-bold">Lux Touch</span>
+          <span className="ml-4 text-black font-mono first-letter:text-xl font-bold">Lux Touch</span>
         </Link>  
 
         <ul className="hidden h-full gap-12 lg:flex">
@@ -36,7 +36,7 @@ const Navbar = () => {
                 link.href
               }
               key={link.key}
-              className="regular-16 text-white flex items-center cursor-pointer pb-1.5 transition-all hover:font-bold"
+              className="regular-16 text-black flex items-center cursor-pointer pb-1.5 transition-all hover:font-bold"
             >
               {link.label}
             </Link>

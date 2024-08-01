@@ -50,7 +50,7 @@ const Footer = () => {
                     <p className="whitespace-nowrap">
                       {link.label}:
                     </p>
-                    <a href='mailto:info@luxxtouch.com' className="medium-14 whitespace-nowrap text-white hover:text-blue-800">
+                    <a href='mailto:info@luxxtouch.com' className="medium-14 whitespace-nowrap text-white hover:text-green-600">
                       {link.value}
                     </a>
                   </div>
@@ -76,7 +76,7 @@ const Footer = () => {
         </div>
 
         <div className="border bg-gray-20" />
-        <p className="regular-14-full text-center text-gray-20"> © 2024 Lux Massage Services | Terms & Conditions Apply</p>
+        <p className="regular-14-full text-center text-gray-20"> © 2024 Lux Massage | Terms & Conditions Apply</p>
       </div>
     </footer>
   )
