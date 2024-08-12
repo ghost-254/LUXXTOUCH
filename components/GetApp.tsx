@@ -20,7 +20,7 @@ const GetApp = () => {
               icon="/android.svg"
               variant="btn_dark_green_outline"
               full
-              href="https://play.google.com/store/apps"
+              href="https://play.google.com/store/apps/details?id=co.ke.luxvita"
             />
           </div>
         </div>

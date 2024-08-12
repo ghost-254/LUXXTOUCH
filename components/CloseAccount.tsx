@@ -39,14 +39,14 @@ const CloseAccount: React.FC = () => {
       return;
     }
 
-    setIsSending(true); // Show loader
+    setIsSending(true);
     emailjs.send('service_4i440nh', 'template_2et5n9d', formData, 'dV0UF-5ZO8EUeVOAQ')
       .then((result) => {
-        setIsSending(false); // Hide loader
+        setIsSending(false);
         setModalIsOpen(true);
         setTimeout(() => setModalIsOpen(false), 5000);
       }, (error) => {
-        setIsSending(false); // Hide loader
+        setIsSending(false);
         console.log(error.text);
       });
   };
