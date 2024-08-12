@@ -5,8 +5,6 @@ import { FOOTER_CONTACT_INFO, FOOTER_LINKS, SOCIALS } from '@/constants';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { IconType } from 'react-icons';
-import { FaFacebookF, FaTelegramPlane, FaTiktok, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -23,6 +21,7 @@ const Footer = () => {
                 <ul className="regular-14 flex flex-col gap-4 text-indigo-50">
                   {columns.links.map((link, linkIndex) => (
                     <Link
+                      className="hover:text-green-600"
                       href={
                         link === 'About Lux' ? '/about' :
                         link === 'General Terms of Use' ? '/general-terms' :
@@ -33,7 +32,7 @@ const Footer = () => {
                         link
                       }
                       key={`footer-link-${linkIndex}`}>
-                      {link}
+                      {link}                  
                     </Link>
                   ))}
                 </ul>
