@@ -1,11 +1,14 @@
-'use client'
+"use client"
 
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import Button from './Button'
+import { FaTimesCircle, FaBell } from 'react-icons/fa' // Import the icons
+import { motion } from 'framer-motion' // Import framer-motion for animation
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [showPopup, setShowPopup] = useState(true) // State to control popup visibility
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
   const slides = [
@@ -43,6 +46,14 @@ const Hero = () => {
     }
   }, [slides.length])
 
+  useEffect(() => {
+    // No timer needed for an indefinite popup
+  }, [])
+  
+  const closePopup = () => {
+    setShowPopup(false)
+  }
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length)
     startSlider()
@@ -54,7 +65,37 @@ const Hero = () => {
   }
 
   return (
-    <section className="bg-white max-container padding-container flex flex-col gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row">
+    <section className="bg-white max-container padding-container flex flex-col gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row relative">
+
+      {showPopup && (
+        <div className="absolute z-50 top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+          <motion.div 
+            className="relative bg-teal-950 p-6 rounded-lg shadow-lg text-center max-w-sm"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <button onClick={closePopup} className="absolute top-2 right-2 text-red-500 hover:text-red-700">
+              <FaTimesCircle size={24} />
+            </button>
+            <div className="flex items-center justify-center mb-4">
+              <motion.div 
+                animate={{
+                  x: [-10, 10, -10, 10, -10, 0], // Shake motion
+                }}
+                transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+              >
+                <FaBell size={36} className="text-white" />
+              </motion.div>
+            </div>
+            <p className="text-lg text-white">
+              <strong className='text-red-600 mb-8'>Important Announcement!!</strong><br className='mb-7'/>
+              We are excited to announce that our app is scheduled to launch on <strong>1st September 2024</strong>. Our team has been working diligently to ensure that you have the best experience possible, and we can't wait to share it with you.<br /><br />
+              Thank you for your patience and support as we finalize the details. Stay tuned for more updates, and be sure to mark your calendars!
+            </p>
+          </motion.div>
+        </div>
+      )}
 
       <div className="relative z-20 flex flex-1 flex-col xl:w-1/2">
         <h1 className="text-black bold-40 lg:bold-60">Luxurious In-Home Massage Services</h1>
