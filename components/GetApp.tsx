@@ -16,11 +16,11 @@ const GetApp = () => {
           <div className="flex w-full flex-col gap-3 whitespace-nowrap xl:flex-row">
             <Button 
               type="button"
-              title="Get on Google Play Store"
+              title="Get App Here Now!"
               icon="/android.svg"
               variant="btn_dark_green_outline"
               full
-              href="https://play.google.com/store/apps/details?id=co.ke.luxvita"
+              href="https://firebasestorage.googleapis.com/v0/b/lux-prod-ca2d3/o/lux.apk?alt=media&token=a283d09a-8aeb-4349-9c48-c232a8065eb8"
             />
           </div>
         </div>
